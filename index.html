@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +21,6 @@ body {
 }
 
 /* STARS */
-
 #stars {
     position: fixed;
     inset: 0;
@@ -47,7 +45,6 @@ body {
 }
 
 /* COUNTDOWN */
-
 #countdown {
     position: absolute;
     top: 50%;
@@ -75,18 +72,15 @@ body {
 }
 
 /* MAIN PINK SCREEN */
-
 #mainScreen {
     display: none;
     position: fixed;
     inset: 0;
-    background: linear-gradient(145deg,
-        #783c61, #b34d76, #42182d);
+    background: linear-gradient(145deg, #783c61, #b34d76, #42182d);
     z-index: 2;
 }
 
 /* FLOATING PARTICLES */
-
 .particle {
     position: absolute;
     border-radius: 50%;
@@ -107,7 +101,6 @@ body {
 }
 
 /* LOADING CONTENT */
-
 .container {
     position: absolute;
     top: 50%;
@@ -145,8 +138,7 @@ body {
 .progress {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg,
-        #ff659c, #d6a0ff);
+    background: linear-gradient(90deg, #ff659c, #d6a0ff);
     border-radius: 30px;
     box-shadow: 0 0 15px #ff80b4;
     transition: width .1s linear;
@@ -167,7 +159,6 @@ body {
 }
 
 /* FOUND MESSAGE */
-
 #foundMessage {
     display: none;
     position: absolute;
@@ -179,8 +170,7 @@ body {
     font-size: clamp(30px, 7vw, 45px);
     font-weight: bold;
     color: #fff;
-    text-shadow: 0 0 15px #ff7eb5,
-                 0 0 35px #ff4d9b;
+    text-shadow: 0 0 15px #ff7eb5, 0 0 35px #ff4d9b;
     animation: foundPop 1s ease;
     z-index: 4;
 }
@@ -200,7 +190,6 @@ body {
 }
 
 /* HEART SPLASH */
-
 #heartScreen {
     display: none;
     position: fixed;
@@ -248,6 +237,438 @@ body {
     animation: foundPop 1s ease;
 }
 
+/* LETTER RECEIVED SCREEN */
+#letterScreen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: linear-gradient(145deg, #ffb6d5, #e65b96, #762448);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+.receivedTitle {
+    color: white;
+    font-size: clamp(28px, 7vw, 40px);
+    font-weight: bold;
+    text-shadow: 0 0 20px #fff;
+    animation: foundPop 1s ease;
+    margin-bottom: 25px;
+}
+
+.envelope {
+    font-size: 115px;
+    cursor: pointer;
+    animation: envelopeFloat 2s infinite ease-in-out;
+    filter: drop-shadow(0 0 20px white);
+}
+
+@keyframes envelopeFloat {
+    0%,100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+.littleThought {
+    color: white;
+    font-size: 19px;
+    line-height: 1.7;
+    max-width: 330px;
+    margin: 25px 0;
+    text-shadow: 0 0 10px #ffdaeb;
+}
+
+.openButton {
+    border: 2px solid white;
+    background: #ff5c9b;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 35px;
+    font-size: 17px;
+    font-weight: bold;
+    box-shadow: 0 0 20px #fff;
+    cursor: pointer;
+    animation: pulseButton 1.5s infinite;
+}
+
+@keyframes pulseButton {
+    50% { transform: scale(1.08); }
+}
+
+/* LOVE LETTER */
+#loveLetter {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: linear-gradient(145deg, #ffd6e7, #ff9ec5, #e85b96);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.letterPaper {
+    background: #fff5f8;
+    color: #873653;
+    width: 100%;
+    max-width: 430px;
+    padding: 30px 24px;
+    border-radius: 18px;
+    box-shadow: 0 0 35px #fff;
+    animation: foundPop 1s ease;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.letterPaper h2 {
+    text-align: center;
+    color: #e64d8a;
+    margin-bottom: 20px;
+}
+
+.letterPaper p {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.letterSign {
+    text-align: right;
+    color: #e64d8a;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* CUTE QUESTION JOURNEY */
+#quizScreen, #quizFinal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: radial-gradient(circle at top, #ffcade, #e85b96 55%, #762448);
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    overflow-y: auto;
+}
+
+.quizCard, .quizFinalCard {
+    width: 100%;
+    max-width: 440px;
+    background: #fff6fa;
+    color: #873653;
+    border-radius: 24px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: 0 12px 45px rgba(80, 12, 53, .35);
+    animation: foundPop .7s ease;
+}
+
+.quizKicker {
+    color: #e64d8a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.quizProgress {
+    display: inline-block;
+    background: #ffe0ec;
+    color: #c33d76;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.quizCard h2, .quizFinalCard h2 {
+    font-size: clamp(22px, 6vw, 29px);
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.quizHint {
+    color: #b45a7c;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.quizOptions {
+    display: grid;
+    gap: 11px;
+}
+
+.quizOption {
+    border: 2px solid #f3a8c5;
+    border-radius: 16px;
+    padding: 13px 12px;
+    background: white;
+    color: #873653;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.quizOption:hover, .quizOption.selected {
+    background: #ffe0ec;
+    border-color: #e64d8a;
+    transform: scale(1.02);
+}
+
+.quizHearts {
+    position: fixed;
+    bottom: 12px;
+    color: white;
+    opacity: .8;
+    font-size: 22px;
+    pointer-events: none;
+}
+
+.quizFinalCard p {
+    line-height: 1.7;
+    margin: 16px 0;
+}
+
+.quizFinalSmall {
+    color: #c04478;
+    font-weight: bold;
+}
+
+/* MUSIC PLAYER */
+.musicFrame {
+    width: 100%;
+    height: 210px;
+    border: 0;
+    border-radius: 15px;
+    margin-top: 18px;
+}
+
+.musicNote {
+    color: #b45a7c;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+@media(max-width: 480px) {
+    .quizCard, .quizFinalCard {
+        padding: 24px 18px;
+    }
+
+    .quizOption {
+        font-size: 14px;
+    }
+
+    #countdown {
+        font-size: 130px;
+    }
+
+    .letterPaper {
+        padding: 24px 19px;
+    }
+
+    .letterPaper p {
+        font-size: 14px;
+    }
+}
+
+#catchButton {
+    position: relative;
+    transition: transform 0.25s ease,
+                opacity 0.2s ease;
+    white-space: nowrap;
+    z-index: 5;
+}
+
+#catchButton.tease {
+    animation: buttonFlicker 0.35s ease;
+}
+
+@keyframes buttonFlicker {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+#finalMessage {
+    animation: foundPop 0.7s ease;
+}
+
+#finalText {
+    animation: foundPop 1s ease;
+    line-height: 1.8;
+    color: #873653;
+}
+
+.surePrompt {
+    color: #c04478;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 14px 0 0;
+    animation: foundPop .35s ease;
+}
+
+#quizNext.teaseLeft { animation: teaseLeft .35s ease; }
+#quizNext.teaseRight { animation: teaseRight .35s ease; }
+
+@keyframes teaseLeft {
+    0%,100% { transform: translateX(0) rotate(0); }
+    35% { transform: translateX(-42px) rotate(-5deg); }
+    70% { transform: translateX(18px) rotate(3deg); }
+}
+@keyframes teaseRight {
+    0%,100% { transform: translateX(0) rotate(0); }
+    35% { transform: translateX(42px) rotate(5deg); }
+    70% { transform: translateX(-18px) rotate(-3deg); }
+}
+
+.heartBurst {
+    position: fixed;
+    z-index: 100;
+    pointer-events: none;
+    font-size: 24px;
+    animation: burstUp 1.4s ease-out forwards;
+}
+@keyframes burstUp {
+    to { transform: translate(var(--dx), -120px) rotate(25deg) scale(1.5); opacity: 0; }
+}
+
+
+/* DIFFERENT CUTE POPUP FOR EVERY QUESTION */
+#cutePopup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(45, 5, 28, .58);
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    backdrop-filter: blur(5px);
+}
+.popupCard {
+    width: 100%;
+    max-width: 350px;
+    background: #fff7fb;
+    color: #873653;
+    border: 3px solid #ffc0d8;
+    border-radius: 26px;
+    padding: 27px 22px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(70, 5, 35, .4);
+    animation: foundPop .45s ease;
+}
+.popupEmoji {
+    font-size: 48px;
+    margin-bottom: 12px;
+    animation: heartBeat 1.2s infinite;
+}
+#popupMessage {
+    font-size: 19px;
+    line-height: 1.55;
+    margin: 8px 0 22px;
+}
+.popupButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.popupChoice {
+    border: 0;
+    border-radius: 30px;
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background: #e64d8a;
+    box-shadow: 0 5px 14px rgba(180, 45, 105, .22);
+}
+#popupNo {
+    background: #bd7291;
+    position: relative;
+    transition: transform .18s ease;
+}
+#popupYes {
+    background: linear-gradient(135deg, #ff6da5, #d83c7c);
+}
+
+
+
+/* THE FINAL GOODBYE — NO WAY BACK, JUST A SWEET ENDING */
+#surpriseEnding {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    text-align: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 35%, #ffd8e8 0%, #f58ab5 48%, #762448 100%);
+}
+.endingCard {
+    width: 100%;
+    max-width: 430px;
+    padding: 34px 24px;
+    border-radius: 30px;
+    color: #873653;
+    background: rgba(255, 248, 252, .96);
+    box-shadow: 0 18px 60px rgba(65, 8, 39, .35);
+    animation: foundPop .8s ease;
+    position: relative;
+    z-index: 2;
+}
+.endingBigHeart {
+    font-size: 72px;
+    display: inline-block;
+    animation: heartBeat 1.25s infinite;
+}
+.endingCard h2 {
+    font-size: clamp(25px, 6vw, 34px);
+    margin: 14px 0;
+    line-height: 1.3;
+}
+.endingCard p {
+    line-height: 1.8;
+    font-size: 16px;
+    margin: 12px 0;
+}
+.endingSignature {
+    color: #d34480;
+    font-weight: bold;
+    margin-top: 22px !important;
+}
+#finishSurprise {
+    margin: 20px auto 0;
+    background: #b83f78;
+}
+
+
+.endingGhatPhoto {
+    display: block;
+    width: 100%;
+    max-height: 235px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 18px auto 14px;
+    border: 4px solid #ffe0ed;
+    box-shadow: 0 8px 24px rgba(120, 30, 75, .2);
+}
+.endingPhotoCaption {
+    font-size: 13px !important;
+    color: #a34c70;
+    margin-top: 4px !important;
+}
+
 </style>
 </head>
 
@@ -257,7 +678,6 @@ body {
 <div id="countdown"></div>
 
 <!-- MAIN SCREEN -->
-
 <div id="mainScreen">
 
     <div class="container" id="loadingContainer">
@@ -286,7 +706,6 @@ body {
 </div>
 
 <!-- FINAL HEART SCREEN -->
-
 <div id="heartScreen">
 
     <div class="bigHeart">❤️</div>
@@ -295,6 +714,212 @@ body {
         Vaish, You're My Favourite Person! 💗
     </div>
 
+</div>
+
+<!-- LETTER RECEIVED SCREEN -->
+<div id="letterScreen">
+
+    <div class="receivedTitle">
+        💌 LETTER RECEIVED! 💌
+    </div>
+
+    <div class="envelope">💌</div>
+
+    <div class="littleThought">
+        "Some feelings are too special to be kept unspoken...
+        and some people are too precious to be left unappreciated." 💗
+    </div>
+
+    <button class="openButton" onclick="openLetter()">
+        TAP TO OPEN 💌
+    </button>
+
+</div>
+
+<!-- LOVE LETTER -->
+<div id="loveLetter">
+
+    <div class="letterPaper">
+
+        <h2>Dear Vaish, 💗</h2>
+
+        <p>Heyyy Vaish! ❤️</p>
+
+        <p>
+            I don't know if I say this enough, but you really are
+            one of the sweetest parts of my world.
+        </p>
+
+        <p>
+            There's something special about you. Your smile,
+            your little moments, your presence and even the
+            smallest things you do have a way of making an
+            ordinary day feel beautiful.
+        </p>
+
+        <p>
+            I hope you never forget how precious you are.
+            Even on days when you don't feel your best,
+            remember that you are someone worth appreciating,
+            someone worth smiling for, and someone who deserves
+            all the happiness in this universe.
+        </p>
+
+        <p>
+            If I could wish one thing for you, it would be that
+            life always gives you reasons to smile, dreams
+            to chase, and people who remind you how amazing
+            you truly are.
+        </p>
+
+        <p>
+            And lastly, never stop being YOU. Because that's
+            the version of you that makes this world a little
+            more beautiful. 🥹💗
+        </p>
+
+        <div class="letterSign">
+            With lots of love,<br>
+            Someone who thinks you're special ❤️
+        </div>
+
+        <button class="openButton"
+                style="display:block;margin:24px auto 0;"
+                onclick="startCuteQuestions()">
+            A LITTLE QUESTION TIME? 💗
+        </button>
+
+    </div>
+
+</div>
+
+<!-- CUTE QUESTIONS -->
+<div id="quizScreen">
+
+    <div class="quizCard">
+
+        <div class="quizKicker" id="quizKicker">
+            JUST A FEW CUTE QUESTIONS 💌
+        </div>
+
+        <div class="quizProgress" id="quizProgress">1 / 5</div>
+
+        <h2 id="quizQuestion">Question goes here</h2>
+
+        <p class="quizHint" id="quizHint">
+            Choose whatever your heart says ✨
+        </p>
+
+        <div id="quizOptions" class="quizOptions"></div>
+
+        <p id="surePrompt" class="surePrompt" style="display:none;">
+            Itni jaldi answer lock? Pakka sure ho? 👀💕
+        </p>
+
+        <button id="quizNext"
+                class="openButton"
+                style="display:none;margin:12px auto 0;"
+                onclick="nextCuteQuestion()">
+            Next 💗
+        </button>
+</div>
+
+    <div class="quizHearts">♡　💕　♡　💗　♡</div>
+
+    <div id="cutePopup">
+        <div class="popupCard">
+            <div class="popupEmoji" id="popupEmoji">🥺</div>
+            <p id="popupMessage">Pakka sure ho?</p>
+            <div class="popupButtons">
+                <button class="popupChoice" id="popupNo" onclick="dodgePopupNo()">Nahi 😤</button>
+                <button class="popupChoice" id="popupYes" onclick="confirmCuteAnswer()">Haan baba 💗</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- FINAL LITTLE MESSAGE AND SONG -->
+<div id="quizFinal">
+
+    <div class="quizFinalCard">
+
+        <div style="font-size:65px;">💗</div>
+
+        <h2>One day, let's make all these plans real!</h2>
+
+        <p>
+            And our last little plan… an evening at Ganga Ghat,
+            watching the aarti, river lights and talking for hours.
+            I hope we make this memory someday. 🥹🪔
+        </p>
+
+        <p class="quizFinalSmall">
+            Thank you for answering my little questions, Vaish. ❤️
+        </p>
+
+        <p>
+            And now… one little musical surprise for you. 🎶
+        </p>
+
+        <button class="openButton" onclick="playBairan()">
+            Play Bairan for you 🎵
+        </button>
+
+        <div id="musicArea" style="display:none;">
+
+            <iframe
+                id="bairanPlayer"
+                class="musicFrame"
+                title="Bairan song"
+                src=""
+                allow="autoplay; encrypted-media; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <p class="musicNote">
+                Just sit back, smile, and enjoy this little moment.
+                This song is for you, Vaish. 🥹❤️
+            </p>
+
+        </div>
+
+        <button id="finishSurprise" class="openButton"
+                style="margin-top:18px;background:#b83f78;"
+                onclick="showSurpriseEnding()">
+            One last thing… 💗
+        </button>
+
+    </div>
+
+</div>
+
+<!-- FINAL ENDING SCREEN -->
+<div id="surpriseEnding">
+    <div class="endingCard">
+        <div class="endingBigHeart">💖</div>
+        <h2>And that's my little surprise for you! 🥹</h2>
+        <img class="endingGhatPhoto"
+             src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Dashashwamedh_Ghat%2C_Ganga%2C_Varanasi.jpg/1280px-Dashashwamedh_Ghat%2C_Ganga%2C_Varanasi.jpg"
+             alt="Evening view of Dashashwamedh Ghat and the Ganga in Varanasi"
+             loading="eager"
+             decoding="async"
+             referrerpolicy="no-referrer"
+             onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Front%2C_Ganga_Aarti_at_Dashashwamedh_Ghat%2C_Varanasi.jpg/960px-Front%2C_Ganga_Aarti_at_Dashashwamedh_Ghat%2C_Varanasi.jpg';">
+        <p class="endingPhotoCaption">A little glimpse of the Ganga Ghat evening we talked about 🪔</p>
+        <p style="font-size:10px;opacity:.7;margin-top:3px;">Photo: Ravi Raj Gupta · <a href="https://commons.wikimedia.org/wiki/File:Dashashwamedh_Ghat,_Ganga,_Varanasi.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA 4.0)</a></p>
+        <p>
+            No more questions, no more buttons to chase… just one wish:
+            may your days be full of smiles, little adventures,
+            beautiful memories and all the love you deserve. 🌸
+        </p>
+        <p>
+            Until that Ganga Ghat evening becomes real,
+            keep this tiny memory safe. 🪔✨
+        </p>
+        <p class="endingSignature">Made with lots of love, just for you. ❤️</p>
+        <div style="font-size:27px;margin-top:14px;">🌷 💗 🦋 💗 🌷</div>
+    </div>
 </div>
 
 <script>
@@ -328,7 +953,7 @@ function starRain() {
 
 starRain();
 
-let rain = setInterval(starRain, 100);
+let rain = setInterval(starRain, 350);
 
 const countdown = document.getElementById("countdown");
 
@@ -504,7 +1129,7 @@ function showFound() {
     }, 3000);
 }
 
-/* 100% COMPLETE - HEART SPLASH */
+/* HEART SPLASH */
 
 function showHeartSplash() {
 
@@ -532,10 +1157,245 @@ function showHeartSplash() {
         setTimeout(() => heart.remove(), 6000);
     }
 
-    setInterval(createHeart, 180);
+    const heartInterval = setInterval(createHeart, 180);
+
+    setTimeout(() => {
+
+        clearInterval(heartInterval);
+
+        screen.style.display = "none";
+
+        document.getElementById("letterScreen").style.display = "flex";
+
+    }, 6000);
 }
 
-/* START WEBSITE */
+/* OPEN LETTER */
+
+function openLetter() {
+
+    document.getElementById("letterScreen").style.display = "none";
+
+    document.getElementById("loveLetter").style.display = "flex";
+
+}
+
+/* FIVE CUTE QUESTIONS — LAST ONE IS GANGA GHAT */
+
+const cuteQuestions = [
+    {
+        q: "What's one little thing that can instantly make your day better? 🥹",
+        options: [
+            "A long chat with my favourite person 💬",
+            "Good food, obviously 🍰",
+            "A random cute surprise 🎁",
+            "A peaceful evening 🌙"
+        ],
+        popup: "Ohooo! Itna pyaara answer? 🥹 Sach mein dil se choose kiya hai na?",
+        emoji: "🥹"
+    },
+    {
+        q: "If we had a whole day with no plans, what would you choose? 💗",
+        options: [
+            "Talk for hours 💬",
+            "Go somewhere random 🚗",
+            "Eat something delicious 🍕",
+            "Just enjoy each other's company ❤️"
+        ],
+        popup: "Achha ji, mere saath poora din? Phir bore toh nahi ho jaogi? 🤭",
+        emoji: "🤭"
+    },
+    {
+        q: "If I steal one bite of your food, what will you do? 😋",
+        options: [
+            "Share it happily ❤️",
+            "Give you the tiniest bite 😂",
+            "Order your own! 😤",
+            "Steal from your plate too 😈"
+        ],
+        popup: "Soch looo! Main sirf ek bite nahi, shayad do-teen le loon 😂🍟",
+        emoji: "🍟"
+    },
+    {
+        q: "Agar main kabhi thoda tang karun, toh gussa toh nahi hogi? 🥺",
+        options: [
+            "Thoda sa gussa, phir maan jaungi 😌",
+            "Bilkul nahi, cute ho tum 💗",
+            "Pehle sorry bolo! 😂",
+            "Main bhi double tang karungi 😈"
+        ],
+        popup: "Sach batao… kabhi zyada tang kar diya toh mujhse gussa toh nahi hogi na? 🥺👉👈",
+        emoji: "🥺"
+    },
+    {
+        q: "And lastly… ek shaam Ganga Ghat par, aarti, river lights aur lots of talks? 🪔",
+        options: [
+            "Of course, why not! ❤️",
+            "That sounds so peaceful 🥹",
+            "Definitely — save this plan! ✨",
+            "Ganga Ghat date? Count me in! 💗"
+        ],
+        popup: "Bas ye wala plan dil se hai… Ganga Ghat ki woh shaam mere saath pakki? 🪔❤️",
+        emoji: "🪔"
+    }
+];
+
+let activeQuestionIndex = 0;
+let selectedAnswer = "";
+let popupNoCount = 0;
+
+/* START QUESTIONS */
+
+function startCuteQuestions() {
+    document.getElementById("loveLetter").style.display = "none";
+    document.getElementById("quizScreen").style.display = "flex";
+    activeQuestionIndex = 0;
+    renderCuteQuestion();
+}
+
+/* SHOW QUESTION */
+
+function renderCuteQuestion() {
+    const item = cuteQuestions[activeQuestionIndex];
+    selectedAnswer = "";
+    popupNoCount = 0;
+
+    document.getElementById("quizKicker").textContent =
+        "FIVE LITTLE QUESTIONS FOR YOU 💌";
+    document.getElementById("quizProgress").textContent =
+        (activeQuestionIndex + 1) + " / " + cuteQuestions.length;
+    document.getElementById("quizQuestion").textContent = item.q;
+    document.getElementById("quizHint").textContent =
+        "Choose whatever your heart says ✨";
+
+    const optionsBox = document.getElementById("quizOptions");
+    optionsBox.innerHTML = "";
+
+    item.options.forEach(option => {
+        const button = document.createElement("button");
+        button.className = "quizOption";
+        button.textContent = option;
+
+        button.onclick = () => {
+            selectedAnswer = option;
+            optionsBox.querySelectorAll(".quizOption").forEach(btn => {
+                btn.classList.remove("selected");
+            });
+            button.classList.add("selected");
+
+            document.getElementById("quizNext").style.display = "block";
+            document.getElementById("quizHint").textContent =
+                "Hmmmm… dil se choose kiya hai na? 😌";
+        };
+
+        optionsBox.appendChild(button);
+    });
+
+    document.getElementById("quizNext").style.display = "none";
+    document.getElementById("quizContinue").style.display = "none";
+    document.getElementById("surePrompt").style.display = "none";
+    document.getElementById("cutePopup").style.display = "none";
+}
+
+/* OPEN A DIFFERENT POPUP FOR EACH QUESTION */
+
+function nextCuteQuestion() {
+    if (!selectedAnswer) return;
+
+    const item = cuteQuestions[activeQuestionIndex];
+    document.getElementById("popupEmoji").textContent = item.emoji;
+    document.getElementById("popupMessage").textContent = item.popup;
+    document.getElementById("popupNo").textContent = "Nahi 😤";
+    document.getElementById("popupNo").style.transform = "translate(0, 0)";
+    popupNoCount = 0;
+    document.getElementById("cutePopup").style.display = "flex";
+}
+
+/* THE NAHI BUTTON PLAYFULLY RUNS AWAY */
+
+function dodgePopupNo() {
+    const noButton = document.getElementById("popupNo");
+    popupNoCount++;
+
+    const moves = [
+        "translate(-38px, -12px) rotate(-8deg)",
+        "translate(35px, 12px) rotate(8deg)",
+        "translate(-18px, 18px) rotate(-5deg)"
+    ];
+    noButton.style.transform = moves[(popupNoCount - 1) % moves.length];
+
+    if (popupNoCount === 2) {
+        document.getElementById("popupMessage").textContent =
+            "Areyyy, itna bhi serious mat ho 😂 Ek baar pyaar se haan bol do na!";
+    } else if (popupNoCount >= 3) {
+        noButton.textContent = "Achha baba, haan 💗";
+        noButton.style.background = "#e64d8a";
+        noButton.onclick = confirmCuteAnswer;
+        document.getElementById("popupMessage").textContent =
+            "Hehe, pakad liya! Ab toh smile kar do 🥰";
+    }
+}
+
+/* ACCEPT ANSWER AND MOVE ON */
+
+function confirmCuteAnswer() {
+    document.getElementById("cutePopup").style.display = "none";
+
+    if (activeQuestionIndex < cuteQuestions.length - 1) {
+        activeQuestionIndex++;
+        renderCuteQuestion();
+        return;
+    }
+
+    document.getElementById("quizScreen").style.display = "none";
+    document.getElementById("quizFinal").style.display = "flex";
+    heartBurst();
+}
+
+function heartBurst() {
+    const symbols = ["💗", "💖", "💕", "✨", "🌸"];
+    for (let i = 0; i < 34; i++) {
+        const heart = document.createElement("span");
+        heart.className = "heartBurst";
+        heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        heart.style.left = (45 + Math.random() * 10) + "vw";
+        heart.style.top = (48 + Math.random() * 10) + "vh";
+        heart.style.setProperty("--dx", ((Math.random() - 0.5) * 360) + "px");
+        heart.style.animationDelay = (Math.random() * 0.35) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1900);
+    }
+}
+
+/* BAIRAN SONG SURPRISE */
+
+// Your Bairan YouTube video ID
+const BAIRAN_VIDEO_ID = "oafxkMv4xnc";
+
+function playBairan() {
+
+    document.getElementById("musicArea").style.display = "block";
+
+    document.getElementById("bairanPlayer").src =
+      
+        BAIRAN_VIDEO_ID +
+        "?autoplay=1&rel=0";
+
+}
+
+
+
+function showSurpriseEnding() {
+   
+    document.getElementById("bairanPlayer").src = "";
+    document.getElementById("quizFinal").style.display = "none";
+    document.getElementById("surpriseEnding").style.display = "flex";
+
+
+    heartBurst();
+}
+
+
 
 setTimeout(showCountdown, 2000);
 
